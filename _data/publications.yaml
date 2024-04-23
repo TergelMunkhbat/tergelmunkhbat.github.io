@@ -1,4 +1,9 @@
 papers:
+  - title: "Enhancing the Reasoning Ability of Large Language Models through Meta-Reflection"
+    authors: "<b><u>Tergel Munkhbat</u></b>, Gihun Lee, Se-Young Yun"
+    venue: "KSC 2023"
+    selected: y
+
   - title: "Improving scores of the NetHack Challenge by leveraging transformer architecture"
     authors: "<b><u>Tergel Munkhbat</u></b>, Buseung Cho"
     venue: "KICS 2023 Winter"
