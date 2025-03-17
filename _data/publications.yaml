@@ -1,4 +1,9 @@
 papers:
+  - title: "Self-Training Elicits Concise Reasoning in Large Language Models"
+    authors: "<b><u>Tergel Munkhbat</u></b>, Namgyu Ho, Seo Hyun Kim, Yongjin Yang, Yujin Kim, Se-Young Yun"
+    venue: "Under review at ACL 2025"
+    selected: y
+
   - title: "Enhancing the Reasoning Ability of Large Language Models through Meta-Reflection"
     authors: "<b><u>Tergel Munkhbat</u></b>, Gihun Lee, Se-Young Yun"
     venue: "KSC 2023"
