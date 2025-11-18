@@ -6,7 +6,7 @@ $(document).ready(function() {
       $body = $('body'),
       $window = $(window),
       $popoverLink = $('[data-popover]'),
-      navOffsetTop = $nav.offset().top,
+      navOffsetTop = $nav.length ? $nav.offset().top : 0,
       $document = $(document),
       entityMap = {
         "&": "&amp;",
@@ -62,11 +62,12 @@ $(document).ready(function() {
 
   function resize() {
     $body.removeClass('has-docked-nav')
-    navOffsetTop = $nav.offset().top
+    navOffsetTop = $nav.length ? $nav.offset().top : 0
     onScroll()
   }
 
   function onScroll() {
+    if(!$nav.length) return;
     if(navOffsetTop < $window.scrollTop() && !$body.hasClass('has-docked-nav')) {
       $body.addClass('has-docked-nav')
     }
