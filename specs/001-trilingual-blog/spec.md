@@ -39,7 +39,7 @@ As a site visitor, I navigate to the new "Blog" section. I see a clean, reverse-
 
 1. **Given** multiple blog posts exist, **When** I navigate to the blog landing page, **Then** I see all posts listed in reverse chronological order (newest first)
 
-2. **Given** I am viewing the blog listing, **When** I look at each post entry, **Then** I see the post title, publication date, and a brief excerpt (first 150-200 characters or custom excerpt from frontmatter)
+2. **Given** I am viewing the blog listing, **When** I look at each post entry, **Then** I see the post title, publication date, and a brief excerpt (using Jekyll's post.excerpt or a custom excerpt field from the frontmatter)
 
 3. **Given** I am viewing the blog listing, **When** I click on a post title or "Read more" link, **Then** I am taken to the full post page
 
@@ -91,9 +91,9 @@ As a site visitor, I am reading a blog post in English. I see that a Korean vers
 - **FR-006**: System MUST provide language switcher UI on each blog post showing available translations (dynamically determined by checking which files share the same `post_id`)
 - **FR-007**: System MUST link versions by cross-referencing the `post_id`. The language switcher will query all posts to find others sharing the same `post_id`
 - **FR-008**: System MUST support YAML frontmatter in markdown files for metadata including: `title`, `date`, `excerpt`, `lang` (en/ko/mn), and `post_id` (shared identifier for translations)
-- **FR-009**: System MUST integrate blog section into existing site navigation
+- **FR-009**: The main index.html file's navigation section MUST be updated to include a link with the text "Blog" that points to /blog/
 - **FR-010**: System MUST maintain existing site styling and layout conventions (Skeleton CSS framework)
-- **FR-011**: System MUST validate `post_id` uniqueness during build and fail with clear error message if duplicate `post_id` values are detected across different posts
+- **FR-011**: To prevent conflicts, all posts sharing a `post_id` MUST be manually verified for uniqueness. The quickstart.md documentation MUST state this as a critical step for authors. If duplicates are found, this is considered an authoring error
 
 ### Key Entities
 
@@ -111,6 +111,7 @@ As a site visitor, I am reading a blog post in English. I see that a Korean vers
 - **A-002**: All 3 language versions of a post will typically be created and pushed at the same time (though system must handle partial sets gracefully)
 - **A-003**: Image and asset paths (e.g., `/assets/blog/my-image.png`) will be identical for all language versions of a post
 - **A-004**: Post filenames will use ASCII characters only; localized titles will be stored in YAML front matter
+- **A-005**: Formal WCAG compliance is not an MVP requirement. However, the implementation MUST use semantic HTML (e.g., `<article>`, `<h1>`, `<nav>`) and respect existing site styles to maintain a baseline of accessibility
 
 ### Risks & Mitigations
 
@@ -124,7 +125,13 @@ As a site visitor, I am reading a blog post in English. I see that a Korean vers
   - **Mitigation**: All language versions of a post should use the same `date` value in front matter to ensure consistent ordering across language-specific blog indexes
 
 - **R-004**: Two different posts could accidentally use the same `post_id`, causing incorrect language linking
-  - **Mitigation**: Build process MUST validate `post_id` uniqueness (FR-011) and fail with clear error message identifying the duplicate, preventing deployment of invalid configuration
+  - **Mitigation**: Manual validation required (FR-011). The quickstart.md authoring guide MUST explicitly instruct authors to verify `post_id` uniqueness before committing
+
+- **R-005**: Malformed YAML frontmatter in a post file
+  - **Mitigation**: This is expected behavior. Jekyll will fail to build, which correctly prevents a broken post from being deployed. The author will see the build error locally with `jekyll serve`
+
+- **R-006**: Posts with the same `post_id` have different `date` values
+  - **Mitigation**: This can cause inconsistent sorting across language versions. The quickstart.md authoring guide MUST explicitly instruct authors to use the same date for all language versions of a post
 
 ## Clarifications
 
