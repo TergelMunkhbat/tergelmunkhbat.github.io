@@ -33,10 +33,10 @@ description: "Task list for trilingual blog implementation"
 
 **Purpose**: Initialize blog structure and verify Jekyll environment
 
-- [ ] T001 Verify Jekyll installation works by running `jekyll serve` in repository root
-- [ ] T002 Create `blog/` directory in repository root for blog landing page
-- [ ] T003 [P] Create `assets/blog/` directory for blog-specific media files
-- [ ] T004 [P] Create `assets/blog/images/` subdirectory for post images
+- [X] T001 Verify Jekyll installation works by running `jekyll serve` in repository root
+- [X] T002 Create `blog/` directory in repository root for blog landing page
+- [X] T003 [P] Create `assets/blog/` directory for blog-specific media files
+- [X] T004 [P] Create `assets/blog/images/` subdirectory for post images
 
 **Checkpoint**: Directory structure ready for blog implementation
 
@@ -46,9 +46,9 @@ description: "Task list for trilingual blog implementation"
 
 **Purpose**: Core layouts and infrastructure that ALL user stories depend on
 
-- [ ] T005 [P] Create `_layouts/post.html` base template extending `_layouts/default.html` for individual blog posts - Layout MUST render page.title as an `<h1>` element and page.content within an `<article>` tag. It MUST reuse existing styles from `libs/custom/my_css.css`
-- [ ] T006 [P] Create `_layouts/blog-index.html` base template extending `_layouts/default.html` for blog listing page - Layout MUST render page.title as an `<h1>` and contain the Liquid loop for listing posts. It MUST reuse existing styles from `libs/custom/my_css.css`
-- [ ] T007 Update navigation in `index.html` to add "Blog" link pointing to `/blog/` - The main index.html file's navigation section MUST be updated to include a link with the text "Blog"
+- [X] T005 [P] Create `_layouts/post.html` base template extending `_layouts/default.html` for individual blog posts - Layout MUST render page.title as an `<h1>` element and page.content within an `<article>` tag. It MUST reuse existing styles from `libs/custom/my_css.css`
+- [X] T006 [P] Create `_layouts/blog-index.html` base template extending `_layouts/default.html` for blog listing page - Layout MUST render page.title as an `<h1>` and contain the Liquid loop for listing posts. It MUST reuse existing styles from `libs/custom/my_css.css`
+- [X] T007 Update navigation in `index.html` to add "Blog" link pointing to `/blog/` - The main index.html file's navigation section MUST be updated to include a link with the text "Blog"
 
 **Checkpoint**: Foundation ready - user stories can now be implemented independently
 
@@ -66,11 +66,11 @@ description: "Task list for trilingual blog implementation"
 
 ### Implementation for User Story 1
 
-- [ ] T008 [P] [US1] Implement post content rendering in `_layouts/post.html` - display `page.title`, `page.date`, and `page.content`
-- [ ] T009 [P] [US1] Add CSS styling for blog post layout in `libs/custom/my_css.css` - headings, paragraphs, code blocks, lists
-- [ ] T010 [US1] Create sample post `_posts/2025-11-18-welcome.en.md` with front matter (layout, title, date, lang: en, post_id: 2025-11-18-welcome, excerpt)
-- [ ] T011 [US1] Create Korean version `_posts/2025-11-18-welcome.ko.md` with identical date and post_id, lang: ko
-- [ ] T012 [US1] Create Mongolian version `_posts/2025-11-18-welcome.mn.md` with identical date and post_id, lang: mn
+- [X] T008 [P] [US1] Implement post content rendering in `_layouts/post.html` - display `page.title`, `page.date`, and `page.content`
+- [X] T009 [P] [US1] Add CSS styling for blog post layout in `libs/custom/my_css.css` - headings, paragraphs, code blocks, lists
+- [X] T010 [US1] Create sample post `_posts/2025-11-18-welcome.en.md` with front matter (layout, title, date, lang: en, post_id: 2025-11-18-welcome, excerpt)
+- [X] T011 [US1] Create Korean version `_posts/2025-11-18-welcome.ko.md` with identical date and post_id, lang: ko
+- [X] T012 [US1] Create Mongolian version `_posts/2025-11-18-welcome.mn.md` with identical date and post_id, lang: mn
 - [ ] T013 [US1] Test locally with `jekyll serve` - verify all three versions render with proper markdown formatting (headings, lists, links)
 - [ ] T014 [US1] Test markdown features: add image link to `assets/blog/images/sample.jpg`, verify image displays
 - [ ] T015 [US1] Test code blocks: add fenced code block with syntax highlighting, verify rendering
@@ -95,12 +95,12 @@ description: "Task list for trilingual blog implementation"
 
 ### Implementation for User Story 2
 
-- [ ] T019 [P] [US2] Implement blog index logic in `_layouts/blog-index.html` - group posts by post_id using Liquid
-- [ ] T020 [P] [US2] Implement language priority fallback in `_layouts/blog-index.html` - filter for en first, then ko, then mn
-- [ ] T021 [US2] Display post metadata in blog index: `display_post.title`, `display_post.date | date: "%B %d, %Y"`, `display_post.excerpt`
-- [ ] T022 [US2] Add "Read more" link for each post pointing to `display_post.url`
-- [ ] T023 [US2] Create `blog/index.html` using layout `blog-index` with page title "Blog"
-- [ ] T024 [US2] Add CSS styling for blog index in `libs/custom/my_css.css` - post list layout, excerpt styling, date formatting
+- [X] T019 [P] [US2] Implement blog index logic in `_layouts/blog-index.html` - group posts by post_id using Liquid
+- [X] T020 [P] [US2] Implement language priority fallback in `_layouts/blog-index.html` - filter for en first, then ko, then mn
+- [X] T021 [US2] Display post metadata in blog index: `display_post.title`, `display_post.date | date: "%B %d, %Y"`, `display_post.excerpt`
+- [X] T022 [US2] Add "Read more" link for each post pointing to `display_post.url`
+- [X] T023 [US2] Create `blog/index.html` using layout `blog-index` with page title "Blog"
+- [X] T024 [US2] Add CSS styling for blog index in `libs/custom/my_css.css` - post list layout, excerpt styling, date formatting
 - [ ] T025 [US2] Test reverse chronological sorting - create posts with dates: 2025-11-20, 2025-11-18, 2025-11-15, verify order
 - [ ] T026 [US2] Test language priority - create post with only Korean version, verify it displays on index
 - [ ] T027 [US2] Test excerpt display - verify custom excerpt from front matter displays correctly, test auto-generated excerpt
@@ -125,12 +125,12 @@ description: "Task list for trilingual blog implementation"
 
 ### Implementation for User Story 3
 
-- [ ] T031 [P] [US3] Create `_includes/language_switcher.html` - filter `site.posts` where post_id matches `page.post_id`
-- [ ] T032 [P] [US3] Implement dynamic language detection in `_includes/language_switcher.html` - check which lang versions exist
-- [ ] T033 [US3] Render language links in switcher - display "English", "한국어", "Монгол" with links to `translation.url`
-- [ ] T034 [US3] Add active language indicator in switcher - highlight current `page.lang` in different style
-- [ ] T035 [US3] Include language switcher in `_layouts/post.html` - add `{% include language_switcher.html %}` below post title
-- [ ] T036 [US3] Add CSS styling for language switcher in `libs/custom/my_css.css` - horizontal layout, hover states, active indicator
+- [X] T031 [P] [US3] Create `_includes/language_switcher.html` - filter `site.posts` where post_id matches `page.post_id`
+- [X] T032 [P] [US3] Implement dynamic language detection in `_includes/language_switcher.html` - check which lang versions exist
+- [X] T033 [US3] Render language links in switcher - display "English", "한국어", "Монгол" with links to `translation.url`
+- [X] T034 [US3] Add active language indicator in switcher - highlight current `page.lang` in different style
+- [X] T035 [US3] Include language switcher in `_layouts/post.html` - add `{% include language_switcher.html %}` below post title
+- [X] T036 [US3] Add CSS styling for language switcher in `libs/custom/my_css.css` - horizontal layout, hover states, active indicator
 - [ ] T037 [US3] Test language switching - click Korean link on English post, verify correct Korean version loads
 - [ ] T038 [US3] Test with missing translation - create post with only EN and KO versions, verify MN link doesn't appear
 - [ ] T039 [US3] Test with single language - create post with only MN version, verify switcher shows only MN (active)

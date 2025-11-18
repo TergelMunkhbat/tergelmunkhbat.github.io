@@ -187,7 +187,143 @@ h4 {
   .popover-link:hover {
     color: #fff;
     background: #33C3F0; }
-  .popover-link:hover,
+    .popover-link:hover,
   .popover-item:first-child .popover-link:hover:after {
     border-bottom-color: #33C3F0; }
+}
+
+/* ================ Blog styling ================ */
+.post {
+  margin-bottom: 40px;
+}
+
+.post-header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.post-header h1 {
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.post-content {
+  line-height: 1.8;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.post-content p {
+  margin-bottom: 20px;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 20px;
+}
+
+.post-content code {
+  background-color: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.post-content pre {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+/* Blog index styling */
+.blog-posts {
+  margin-top: 30px;
+}
+
+.blog-post-item {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.blog-post-item:last-child {
+  border-bottom: none;
+}
+
+.blog-post-item h5 {
+  margin-bottom: 5px;
+}
+
+.blog-post-item h5 a {
+  color: #222;
+  text-decoration: none;
+}
+
+.blog-post-item h5 a:hover {
+  color: #33C3F0;
+}
+
+.post-date {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.post-excerpt {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Language switcher styling */
+.language-switcher {
+  margin-top: 15px;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.language-label {
+  font-weight: 600;
+  margin-right: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.language-link {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #33C3F0;
+  font-weight: 500;
+}
+
+.language-link:hover {
+  text-decoration: underline;
+}
+
+.language-link.active {
+  color: #222;
+  font-weight: 600;
+  cursor: default;
+}
+
+.language-link.active:hover {
+  text-decoration: none;
 }

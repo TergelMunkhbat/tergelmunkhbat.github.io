@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<div class="docs-section" id="blog">
+  <h1>{{ page.title }}</h1>
+  
+  <div class="blog-posts">
+    {% assign post_groups = site.posts | group_by: "post_id" | sort: "name" | reverse %}
+    {% for group in post_groups %}
+      {% assign en_post = group.items | where: "lang", "en" | first %}
+      {% assign ko_post = group.items | where: "lang", "ko" | first %}
+      {% assign mn_post = group.items | where: "lang", "mn" | first %}
+      
+      {% assign display_post = en_post | default: ko_post | default: mn_post %}
+      
+      {% if display_post %}
+      <div class="blog-post-item">
+        <h5><a href="{{ display_post.url }}">{{ display_post.title }}</a></h5>
+        <p class="post-date">{{ display_post.date | date: "%B %d, %Y" }}</p>
+        {% if display_post.excerpt %}
+        <p class="post-excerpt">{{ display_post.excerpt }}</p>
+        {% endif %}
+        <p><a href="{{ display_post.url }}">Read more &raquo;</a></p>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

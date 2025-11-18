@@ -1,0 +1,27 @@
+{% assign translations = site.posts | where: "post_id", page.post_id %}
+{% if translations.size > 1 %}
+<div class="language-switcher">
+  <span class="language-label">Languages:</span>
+  {% for translation in translations %}
+    {% if translation.lang == "en" %}
+      {% if translation.lang == page.lang %}
+        <span class="language-link active">English</span>
+      {% else %}
+        <a href="{{ translation.url }}" class="language-link">English</a>
+      {% endif %}
+    {% elsif translation.lang == "ko" %}
+      {% if translation.lang == page.lang %}
+        <span class="language-link active">한국어</span>
+      {% else %}
+        <a href="{{ translation.url }}" class="language-link">한국어</a>
+      {% endif %}
+    {% elsif translation.lang == "mn" %}
+      {% if translation.lang == page.lang %}
+        <span class="language-link active">Монгол</span>
+      {% else %}
+        <a href="{{ translation.url }}" class="language-link">Монгол</a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
