@@ -1,0 +1,12 @@
+# Jekyll Configuration for tergelmunkhbat.github.io
+
+# Exclude directories and files from processing
+exclude:
+  - specs/
+  - README.md
+  - CLAUDE.md
+  - .claude/
+  - .git/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
