@@ -74,7 +74,7 @@ excerpt: "Brief summary for blog index"
 {% if page.layout == 'post' %}
   {% include slim-navbar.html %}
 {% else %}
-  {% include hero-header.html %}
+  {% include bio-section.html variant="hero" %}
 {% endif %}
 ```
 
@@ -141,7 +141,7 @@ menu_items:
 
 ```
 _data/main_info.yaml
-  ├─> Hero Header (_includes/hero-header.html)
+  ├─> Hero Header (_includes/bio-section.html variant="hero")
   │    └─> Used on: index.html (layout: default)
   │
   ├─> Bio Footer (_includes/bio-section.html variant="footer")
@@ -160,7 +160,7 @@ _posts/*.md (Jekyll site.posts)
 ### Homepage Rendering
 1. User navigates to `/` (index.html)
 2. Jekyll detects `layout: default`
-3. Template includes hero-header.html
+3. Template includes bio-section.html with variant="hero"
 4. Hero header loads data from `site.data.main_info`
 5. Renders name, title, profile_pic, social_links
 
