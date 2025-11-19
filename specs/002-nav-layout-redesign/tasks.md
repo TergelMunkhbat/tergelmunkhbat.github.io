@@ -27,10 +27,10 @@
 
 **Purpose**: Verify environment and prepare for implementation
 
-- [ ] T001 Verify Jekyll installation and start local preview with `jekyll serve --livereload`
-- [ ] T002 [P] Verify current site structure matches plan.md (check `_layouts/`, `_includes/`, `_data/main_info.yaml` exist)
-- [ ] T003 [P] Review existing homepage header to understand current bio section structure for extraction
-- [ ] T003b [P] Measure current hero header height in pixels using browser DevTools - Record baseline for SC-002 verification (target: 70% reduction, e.g., 350px → <100px)
+- [x] T001 Verify Jekyll installation and start local preview with `jekyll serve --livereload`
+- [x] T002 [P] Verify current site structure matches plan.md (check `_layouts/`, `_includes/`, `_data/main_info.yaml` exist)
+- [x] T003 [P] Review existing homepage header to understand current bio section structure for extraction
+- [x] T003b [P] Measure current hero header height in pixels using browser DevTools - Record baseline for SC-002 verification (target: 70% reduction, e.g., 350px → <100px)
 
 ---
 
@@ -59,10 +59,10 @@
 {% endif %}
 ```
 
-- [ ] T004 [P] Create `_includes/bio-section.html` - Extract current hero header bio HTML into reusable component with variant parameter support (variants: "hero", "footer")
-- [ ] T005 [P] Create `_includes/slim-navbar.html` - Implement basic navbar structure with name/logo (left) and placeholder for menu links (right), max-height: 100px
-- [ ] T006 Add base CSS for bio-section variants in `libs/custom/my_css.css` - Define `.bio-section`, `.bio-hero`, `.bio-footer` classes
-- [ ] T007 Add base CSS for slim-navbar in `libs/custom/my_css.css` - Define `.slim-navbar` with sticky positioning and max-height constraint
+- [x] T004 [P] Create `_includes/bio-section.html` - Extract current hero header bio HTML into reusable component with variant parameter support (variants: "hero", "footer")
+- [x] T005 [P] Create `_includes/slim-navbar.html` - Implement basic navbar structure with name/logo (left) and placeholder for menu links (right), max-height: 100px
+- [x] T006 Add base CSS for bio-section variants in `libs/custom/my_css.css` - Define `.bio-section`, `.bio-hero`, `.bio-footer` classes
+- [x] T007 Add base CSS for slim-navbar in `libs/custom/my_css.css` - Define `.slim-navbar` with sticky positioning and max-height constraint
 
 **Checkpoint**: Foundation ready - reusable components created, user story implementation can now begin
 
@@ -76,14 +76,14 @@
 
 ### Implementation for User Story 1
 
-- [ ] T008 [P] [US1] Review current layout structure - Check `_layouts/default.html` (base template) and `_layouts/post.html` (article template) to understand inheritance
-- [ ] T009 [US1] Add conditional header logic to `_layouts/default.html` - Replace existing header with: `{% if page.layout == 'post' %}{% include slim-navbar.html %}{% else %}{% include bio-section.html variant="hero" %}{% endif %}`
-- [ ] T010 [US1] Add conditional footer logic to `_layouts/default.html` - After main content area, add: `{% if page.layout == 'post' %}<footer class="article-footer">{% include bio-section.html variant="footer" %}</footer>{% endif %}`
-- [ ] T011 [US1] Add sticky positioning CSS for slim-navbar in `libs/custom/my_css.css` - Set `position: -webkit-sticky; position: sticky; top: 0; z-index: 1000;`
-- [ ] T012 [US1] Style bio-footer variant in `libs/custom/my_css.css` - Compact horizontal layout, smaller profile pic, inline social icons
-- [ ] T013 [US1] Manual test: View article page with `jekyll serve`, verify slim navbar appears at top instead of hero header
-- [ ] T014 [US1] Manual test: Scroll down article page, verify navbar remains visible (sticky)
-- [ ] T015 [US1] Manual test: Scroll to bottom of article, verify bio section appears with photo, name, title, social icons
+- [x] T008 [P] [US1] Review current layout structure - Check `_layouts/default.html` (base template) and `_layouts/post.html` (article template) to understand inheritance
+- [x] T009 [US1] Add conditional header logic to `_layouts/default.html` - Replace existing header with: `{% if page.layout == 'post' %}{% include slim-navbar.html %}{% else %}{% include bio-section.html variant="hero" %}{% endif %}`
+- [x] T010 [US1] Add conditional footer logic to `_layouts/default.html` - After main content area, add: `{% if page.layout == 'post' %}<footer class="article-footer">{% include bio-section.html variant="footer" %}</footer>{% endif %}`
+- [x] T011 [US1] Add sticky positioning CSS for slim-navbar in `libs/custom/my_css.css` - Set `position: -webkit-sticky; position: sticky; top: 0; z-index: 1000;`
+- [x] T012 [US1] Style bio-footer variant in `libs/custom/my_css.css` - Compact horizontal layout, smaller profile pic, inline social icons
+- [x] T013 [US1] Manual test: View article page with `jekyll serve`, verify slim navbar appears at top instead of hero header
+- [x] T014 [US1] Manual test: Scroll down article page, verify navbar remains visible (sticky)
+- [x] T015 [US1] Manual test: Scroll to bottom of article, verify bio section appears with photo, name, title, social icons
 
 **Checkpoint**: User Story 1 complete - Article pages have slim navbar and footer bio. Independently testable.
 
@@ -97,12 +97,12 @@
 
 ### Implementation for User Story 2
 
-- [ ] T016 [P] [US2] Verify homepage layout value - Check `index.html` front matter to confirm it uses `layout: default` (NOT `layout: post`)
-- [ ] T017 [US2] Verify conditional logic in `_layouts/default.html` - Confirm the `{% else %}` branch includes bio-section.html with variant="hero" for non-post layouts
-- [ ] T018 [US2] Style bio-hero variant in `libs/custom/my_css.css` - Large centered layout, large profile pic, centered social icons (preserve existing styling)
-- [ ] T019 [US2] Manual test: View homepage with `jekyll serve`, verify large hero header displays (NOT slim navbar)
-- [ ] T020 [US2] Manual test: Scroll down homepage, verify NO bio footer appears (only hero header at top)
-- [ ] T021 [US2] Manual test: Compare homepage to previous version, verify visual appearance unchanged
+- [x] T016 [P] [US2] Verify homepage layout value - Check `index.html` front matter to confirm it uses `layout: default` (NOT `layout: post`)
+- [x] T017 [US2] Verify conditional logic in `_layouts/default.html` - Confirm the `{% else %}` branch includes bio-section.html with variant="hero" for non-post layouts
+- [x] T018 [US2] Style bio-hero variant in `libs/custom/my_css.css` - Large centered layout, large profile pic, centered social icons (preserve existing styling)
+- [x] T019 [US2] Manual test: View homepage with `jekyll serve`, verify large hero header displays (NOT slim navbar)
+- [x] T020 [US2] Manual test: Scroll down homepage, verify NO bio footer appears (only hero header at top)
+- [x] T021 [US2] Manual test: Compare homepage to previous version, verify visual appearance unchanged
 
 **Checkpoint**: User Story 2 complete - Homepage preserves hero header. Both US1 and US2 independently testable.
 
@@ -116,15 +116,15 @@
 
 ### Implementation for User Story 3
 
-- [ ] T022 [P] [US3] Create blog index page at `blog/index.html` - Use Jekyll's site.posts loop to list all blog posts with title, date, excerpt. Handle empty posts gracefully with message like "No posts yet"
-- [ ] T023 [US3] Update `_includes/slim-navbar.html` - Add navigation menu with "Home" link (href="/") and "Blog" link (href="/blog/index.html")
-- [ ] T024 [US3] Make name/logo clickable in `_includes/slim-navbar.html` - Wrap name in `<a href="/">` link
-- [ ] T025 [US3] Style navigation menu in `libs/custom/my_css.css` - Horizontal flexbox layout, right-aligned menu links
-- [ ] T026 [US3] Style blog index page in `libs/custom/my_css.css` - Format post list with titles, dates, excerpts
-- [ ] T027 [US3] Manual test: View article page, click "Home" menu link, verify navigation to homepage
-- [ ] T028 [US3] Manual test: View article page, click "Blog" menu link, verify navigation to `/blog/index.html`
-- [ ] T029 [US3] Manual test: View article page, click name/logo, verify navigation to homepage
-- [ ] T030 [US3] Manual test: View blog index page, verify all posts listed with clickable links
+- [x] T022 [P] [US3] Create blog index page at `blog/index.html` - Use Jekyll's site.posts loop to list all blog posts with title, date, excerpt. Handle empty posts gracefully with message like "No posts yet"
+- [x] T023 [US3] Update `_includes/slim-navbar.html` - Add navigation menu with "Home" link (href="/") and "Blog" link (href="/blog/index.html")
+- [x] T024 [US3] Make name/logo clickable in `_includes/slim-navbar.html` - Wrap name in `<a href="/">` link
+- [x] T025 [US3] Style navigation menu in `libs/custom/my_css.css` - Horizontal flexbox layout, right-aligned menu links
+- [x] T026 [US3] Style blog index page in `libs/custom/my_css.css` - Format post list with titles, dates, excerpts
+- [x] T027 [US3] Manual test: View article page, click "Home" menu link, verify navigation to homepage
+- [x] T028 [US3] Manual test: View article page, click "Blog" menu link, verify navigation to `/blog/index.html`
+- [x] T029 [US3] Manual test: View article page, click name/logo, verify navigation to homepage
+- [x] T030 [US3] Manual test: View blog index page, verify all posts listed with clickable links
 
 **Checkpoint**: User Story 3 complete - Navigation menu functional. All three user stories independently testable.
 
@@ -136,26 +136,26 @@
 
 ### Mobile Responsive Design (Addresses Edge Cases from spec.md)
 
-- [ ] T031 [P] Implement hamburger menu in `_includes/slim-navbar.html` - Add checkbox hack: hidden checkbox (`id="nav-toggle"`), label with hamburger icon (`☰`), nav menu
-- [ ] T032 [P] Add mobile-responsive CSS in `libs/custom/my_css.css` - Media query @media (max-width: 767px): hide menu, show hamburger, toggle menu on checkbox :checked
-- [ ] T033 [P] Add desktop CSS in `libs/custom/my_css.css` - Media query @media (min-width: 768px): show menu, hide hamburger
-- [ ] T034 Add ARIA labels for accessibility in `_includes/slim-navbar.html` - Add aria-label to checkbox and hamburger label
-- [ ] T035 Manual test: Resize browser to mobile width (<768px), verify hamburger icon appears and menu links hidden
-- [ ] T036 Manual test: Click hamburger icon, verify menu expands to show Home and Blog links
-- [ ] T037 Manual test: Verify hamburger menu works without JavaScript (checkbox hack is CSS-only)
+- [x] T031 [P] Implement hamburger menu in `_includes/slim-navbar.html` - Add checkbox hack: hidden checkbox (`id="nav-toggle"`), label with hamburger icon (`☰`), nav menu
+- [x] T032 [P] Add mobile-responsive CSS in `libs/custom/my_css.css` - Media query @media (max-width: 767px): hide menu, show hamburger, toggle menu on checkbox :checked
+- [x] T033 [P] Add desktop CSS in `libs/custom/my_css.css` - Media query @media (min-width: 768px): show menu, hide hamburger
+- [x] T034 Add ARIA labels for accessibility in `_includes/slim-navbar.html` - Add aria-label to checkbox and hamburger label
+- [x] T035 Manual test: Resize browser to mobile width (<768px), verify hamburger icon appears and menu links hidden
+- [x] T036 Manual test: Click hamburger icon, verify menu expands to show Home and Blog links
+- [x] T037 Manual test: Verify hamburger menu works without JavaScript (checkbox hack is CSS-only)
 
 ### Cross-Browser and Accessibility Testing
 
-- [ ] T038 Manual test: Test in Chrome, Firefox, Safari - verify navbar sticky positioning works (including -webkit-sticky prefix)
-- [ ] T039 Manual test: Disable JavaScript in browser, verify navbar stays sticky and navigation links work
-- [ ] T040 Manual test: Use keyboard navigation (Tab key) to navigate through navbar links, verify all focusable
-- [ ] T041 Manual test: Verify navbar remains readable with browser zoom at 150% and 200%
+- [x] T038 Manual test: Test in Chrome, Firefox, Safari - verify navbar sticky positioning works (including -webkit-sticky prefix)
+- [x] T039 Manual test: Disable JavaScript in browser, verify navbar stays sticky and navigation links work
+- [x] T040 Manual test: Use keyboard navigation (Tab key) to navigate through navbar links, verify all focusable
+- [x] T041 Manual test: Verify navbar remains readable with browser zoom at 150% and 200%
 
 ### Final Validation and Deployment
 
-- [ ] T042 Review all functional requirements (FR-001 through FR-012 from spec.md) and verify each is met
-- [ ] T043 Validate all success criteria (SC-001 through SC-006 from spec.md) - measure navbar height, verify 70% reduction, test scrolling
-- [ ] T044 Run `jekyll serve` and perform full site smoke test - homepage, multiple article pages, blog index, mobile view
+- [x] T042 Review all functional requirements (FR-001 through FR-012 from spec.md) and verify each is met
+- [x] T043 Validate all success criteria (SC-001 through SC-006 from spec.md) - measure navbar height, verify 70% reduction, test scrolling
+- [x] T044 Run `jekyll serve` and perform full site smoke test - homepage, multiple article pages, blog index, mobile view
 - [ ] T045 Commit all changes with descriptive message: "feat(nav): implement context-aware headers with responsive navbar"
 - [ ] T046 Push to feature branch (`002-nav-layout-redesign`) and verify GitHub Pages preview build succeeds (if applicable)
 - [ ] T047 Create pull request or merge to master branch for production deployment

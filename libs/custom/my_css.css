@@ -399,3 +399,193 @@ h4 {
 .language-link.active:hover {
   text-decoration: none;
 }
+
+/* ==========================================================================
+   Navigation & Layout Redesign (002-nav-layout-redesign)
+   ========================================================================== */
+
+/* --- Bio Section Component (Reusable) --- */
+.bio-section {
+  /* Base styles for all bio sections */
+}
+
+.bio-hero {
+  /* Hero header variant: Large, centered layout for homepage */
+  /* Inherits existing .header and .main-description styles */
+}
+
+.bio-footer {
+  /* Footer variant: Compact layout for article pages */
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+.bio-footer .profile-pic-small {
+  border-radius: 50%;
+  max-width: 80px;
+}
+
+/* Mobile: even smaller bio footer image */
+@media (max-width: 549px) {
+  .bio-footer .profile-pic-small {
+    max-width: 60px;
+  }
+
+  .bio-footer .name {
+    font-size: 1.5rem;
+  }
+
+  .bio-footer .title {
+    font-size: 1.1rem;
+  }
+}
+
+.bio-footer .bio-text {
+  /* Compact text layout */
+}
+
+.bio-footer .name {
+  margin-bottom: 5px;
+  font-size: 1.8rem;
+}
+
+.bio-footer .title {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.bio-footer .social-icons-inline {
+  margin-top: 10px;
+}
+
+.bio-footer .social-icons-inline span {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.bio-footer .social-icons-inline .fa,
+.bio-footer .social-icons-inline .ai {
+  font-size: 20px;
+}
+
+/* --- Slim Navbar Component --- */
+.slim-navbar {
+  position: -webkit-sticky; /* Safari compatibility */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  max-height: 100px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.navbar-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand .brand-link {
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #222;
+}
+
+.navbar-brand .brand-link:hover {
+  color: #1EAEDB;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #1EAEDB;
+}
+
+/* Mobile Hamburger Menu (Checkbox Hack) */
+.nav-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.nav-toggle-label {
+  display: none; /* Hidden by default, shown on mobile */
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.hamburger-icon {
+  user-select: none;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767px) {
+  /* Hide menu links by default on mobile */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-direction: column;
+    padding: 15px;
+    min-width: 150px;
+  }
+
+  /* Show hamburger icon on mobile */
+  .nav-toggle-label {
+    display: block;
+  }
+
+  /* Show menu when checkbox is checked */
+  .nav-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+
+  /* Adjust navbar container for mobile */
+  .navbar-container {
+    position: relative;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  /* Always show menu on desktop */
+  .nav-menu {
+    display: flex;
+  }
+
+  /* Hide hamburger icon on desktop */
+  .nav-toggle-label {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   End Navigation & Layout Redesign
+   ========================================================================== */
