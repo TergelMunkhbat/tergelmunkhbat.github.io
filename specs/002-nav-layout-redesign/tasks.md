@@ -157,9 +157,9 @@
 - [x] T043 Validate all success criteria (SC-001 through SC-006 from spec.md) - measure navbar height, verify 70% reduction, test scrolling
 - [x] T044 Run `jekyll serve` and perform full site smoke test - homepage, multiple article pages, blog index, mobile view
 - [x] T045 Commit all changes with descriptive message: "feat(nav): implement context-aware headers with responsive navbar"
-- [ ] T046 Push to feature branch (`002-nav-layout-redesign`) and verify GitHub Pages preview build succeeds (if applicable)
-- [ ] T047 Create pull request or merge to master branch for production deployment
-- [ ] T048 Verify production deployment on live site - test homepage, articles, blog index, mobile responsiveness
+- [x] T046 Push to feature branch (`002-nav-layout-redesign`) and verify GitHub Pages preview build succeeds (if applicable)
+- [x] T047 Create pull request or merge to master branch for production deployment
+- [x] T048 Verify production deployment on live site - test homepage, articles, blog index, mobile responsiveness
 
 **Final Checkpoint**: All user stories complete, mobile responsive, accessibility verified, ready for production.
 
