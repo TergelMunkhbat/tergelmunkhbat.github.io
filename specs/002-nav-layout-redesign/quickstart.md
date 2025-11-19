@@ -60,7 +60,7 @@ Follow this sequence to minimize breaking changes:
 
 4. **Add Conditional Header Logic**
    - Modify `_layouts/default.html` or `_layouts/post.html`
-   - Add Liquid conditional: `{% if page.layout == 'post' %}`
+   - Add Liquid conditional: `{ % if page.layout == 'post' % }` (remove spaces)
    - Include slim-navbar for posts, hero header for others
    - Test: Homepage keeps hero header, articles show slim navbar
 
